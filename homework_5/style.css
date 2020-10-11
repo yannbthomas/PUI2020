@@ -1,0 +1,92 @@
+/*********** HEADER ************/
+
+header {
+    background-color: #fcd78d;
+    color: #ed9e00;
+    padding: 10px;
+}
+
+h1 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400; 
+    text-align: left;
+    padding-left: 15px;
+    padding-bottom: 0px;
+    margin: 0;
+}
+
+h2 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+    text-align: left;
+    margin: 0;
+}
+
+#logo {
+    padding: 30px 0 10px 30px;
+}
+
+nav {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: normal;
+    text-align: right;
+    padding-right: 30px;
+}
+
+.navTab {
+    padding: 0 10px 0 10px;
+    text-decoration: none;
+    color: #ed9e00;
+}
+
+/*********** Initialize Row/Column Structure ************/
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*********** HOME CONTENT ************/
+
+#homeContent{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/*********** Begin Order Image & Button ************/
+
+#beginOrder{
+    width: 788px;
+    height: 409px;
+    padding: 30px 0 0 30px;
+    position: relative;
+}
+
+#croppedBun {
+    width: 788px; /* width of container */
+    height: 409px; /* height of container */
+    object-fit: cover; 
+}
+
+#orderButton {
+    width: 264px;
+    height: 92px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background-color: #ed9e00;
+}
+
+#orderLink {
+    line-height: 92px;
+    text-align: center;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    padding-left: 20px;
+}
