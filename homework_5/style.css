@@ -1,4 +1,4 @@
-/*********** HEADER ************/
+/*********** HEADER (Global) ************/
 
 header {
     background-color: #fcd78d;
@@ -54,7 +54,7 @@ nav {
     font-size: 18px;
 }
 
-/*********** HOME CONTENT ************/
+/********************************* HOME CONTENT **********************************/
 
 .homeContent{
     font-family: 'Source Sans Pro', sans-serif;
@@ -84,7 +84,6 @@ nav {
 
 .homeRow::after {
     content: "";
-    /* display: table; */
     clear: left;
     display: table;
 }
@@ -159,8 +158,185 @@ nav {
 
 /*********** NEWS SECTION ************/
 
+.article {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: italic;
 
-/*********** FOOTER ************/
+}
+
+/********************************* ORDER PAGE **********************************/
+
+.orderStep {
+    align-content: center;
+    width: 80%;
+    height: 84px;
+    background-color: #ed9e00;   
+    text-align: left;
+    line-height: 84px;
+    margin:  30px auto 0 ;
+}
+
+.stepLabel {
+    padding-left: 30px;
+    color: white;
+    font-size: 24px;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-decoration: none;
+}
+
+.stepExp {
+    position: relative;
+    width: 80%;
+    height: 236px;
+    background-color: white; 
+    border-style: solid;
+    border-width: medium;  
+    border-color: #ed9e00;
+    box-sizing: border-box;
+    text-align: left;
+    margin: auto;
+}
+
+#bunSelection {
+    position: relative;
+    width: 80%;
+    height: 549px;
+    background-color: white; 
+    border-style: solid;
+    border-width: medium;  
+    border-color: #ed9e00;
+    box-sizing: border-box;
+    text-align: left;
+    margin: auto;
+}
+
+.stepContent {
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 30px 0 0 30px;
+}
+
+.type {
+    padding: 20px 40px;
+    margin-right: 30px;
+    background-color: white; 
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    color: #ed9e00;
+    border-style: solid;
+    border-width: thin;  
+    border-color: #ed9e00;
+    transition-duration: 0.4s;
+}
+
+.type:hover {
+    background-color: #ed9e00; 
+    font-weight: 600;
+    color: white;
+}
+
+.next {
+    float: right;
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+    padding: 10px 40px;
+    margin-right: 30px;
+    background-color: white; 
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    color: #ed9e00;
+    border-style: solid;
+    border-width: thin;  
+    border-color: #ed9e00;
+    transition-duration: 0.4s;
+}
+
+.next:hover {
+    background-color: #ed9e00; 
+    font-weight: 600;
+    color: white;
+}
+
+.num {
+    padding: 25px;
+    margin-right: 30px;
+    background-color: white; 
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    color: #ed9e00;
+    border-style: solid;
+    border-width: thin;  
+    border-color: #ed9e00;
+    transition-duration: 0.4s;
+}
+
+.num:hover {
+    background-color: #ed9e00; 
+    font-weight: 600;
+    color: white;
+}
+
+#allBuns {
+    position: absolute;
+    top: 50px;
+    left: 30px;
+    width: 600px;
+    height: 440px;
+    /* border-style: solid;
+    border-width: thin;  
+    border-color: grey; */
+    margin-top: 30px;
+}
+
+.bun {
+    position: relative;
+    width: 170px;
+    height: 170px;
+    background-image: url("https://i.imgur.com/gNDH9rn.jpg");
+    display: inline-block;
+    text-align: center;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.bunText {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.bunPlus {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 35px;
+    height: 35px;
+    background-color: #ed9e00;
+    color: white;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 35px;
+    border-style: none;
+}
+
+.bunPlus:hover {
+    background-color: #fcd78d; 
+}
+
+#yourSum {
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    width: 40%;
+    height: 390px;
+    border-style: solid;
+    border-width: 0 0 0 thin;  
+    border-color: grey;
+    margin-top: 30px;
+}
+
+
+/*********** FOOTER (Global) ************/
 
 footer {
     background-color: #fcd78d;

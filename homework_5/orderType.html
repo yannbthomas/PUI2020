@@ -1,4 +1,4 @@
-<!-- First page of the order process  -->
+<!-- Second page of the order process, Pickup vs Delivery  -->
 
 <!DOCTYPE html>
 <html>
@@ -31,23 +31,31 @@
         <div class="orderStep">
             <a class="stepLabel" href="orderType.html">1 &emsp; ORDER TYPE</a>
         </div>
-        <div class="orderStep">
-            <a class="stepLabel">2 &emsp; ORDER SIZE</a>
+        <div class="stepExp">
+            <p class="stepContent">
+                Please select your order type. <br><br>
+                <button class="type"> PICKUP </button>
+                <button class="type"> DELIVERY </button> <br>
+                <button class="next" onclick="window.location.href='orderSize.html';"> NEXT </button>
+            </p>
         </div>
         <div class="orderStep">
-            <a class="stepLabel">3 &emsp; BUN SELECTION</a>
+            <a class="stepLabel" href="orderSize.html">2 &emsp; ORDER SIZE</a>
+        </div>
+        <div class="orderStep">
+            <a class="stepLabel" href="bunSelect.html">3 &emsp; BUN SELECTION</a>
         </div>
         <div class="orderStep">
             <a class="stepLabel">4 &emsp; REVIEW & ADD TO CART</a>
         </div>
 
 
-         <!-- <footer>
+         <footer>
             <div id="logo">
                 <h2>BUN BUN</h2>
                 <h3 id = "subHead">— Bake Shop —</h3>
             </div>
-         </footer> -->
+         </footer>
     </div>
 
 </body>
