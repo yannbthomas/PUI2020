@@ -36,7 +36,7 @@ h3 {
     margin: 0;
 }
 
-#logo {
+.logo {
     padding: 30px 0 10px 30px;
 }
 
@@ -144,6 +144,7 @@ nav {
     height: 240px;
     padding-left: 30px;
     position: relative;
+    float: right;
     margin: 0;
     bottom: 0;
     right: 0;
@@ -154,6 +155,7 @@ nav {
     height: 240px;
     object-fit: cover;
     padding-left: 30px;
+    float: right;
 }
 
 /*********** NEWS SECTION ************/
