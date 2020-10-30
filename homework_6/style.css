@@ -284,9 +284,6 @@ nav {
     left: 30px;
     width: 600px;
     height: 440px;
-    /* border-style: solid;
-    border-width: thin;  
-    border-color: grey; */
     margin-top: 30px;
 }
 
@@ -338,7 +335,6 @@ nav {
 
 .glazeSelect {
     font-family: 'Source Sans Pro', sans-serif;
-    /* font-size: 18px; */
     position: absolute;
     top: 10px;
     width: 50%;
@@ -352,7 +348,6 @@ nav {
 
 .numSelect {
     font-family: 'Source Sans Pro', sans-serif;
-    /* font-size: 18px; */
     position: absolute;
     top: 10px;
     right: 0;
@@ -395,12 +390,17 @@ nav {
     margin-top: 30px;
 }
 
-#totalPrice {
+.totalPrice {
     font-family: 'Source Sans Pro', sans-serif;
     text-align: right;
     margin-right: 40px;
 }
 
+.bunCounter {
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: right;
+    margin-right: 40px;
+}
 
 /*********** FOOTER (Global) ************/
 
