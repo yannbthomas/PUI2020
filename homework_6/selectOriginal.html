@@ -9,7 +9,7 @@
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <!-- javascript -->
-    <script src="main.js" type="text/javascript"></script>
+    <script src="bunSelect.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -58,18 +58,19 @@
                         <div class="glazeSelect">
                             &ensp; Choose glaze:
                             <ul  class="glazeList">
-                                <li><input type="checkbox"> None </li>
-                                <li><input type="checkbox"> Sugar-Milk </li>
-                                <li><input type="checkbox"> Vanilla-Milk </li>
-                                <li><input type="checkbox"> Double-Chocolate </li>
+                                <li><input type="radio" name="glaze" value="None"> None </li>
+                                <li><input type="radio" name="glaze" value="Sugar-Milk"> Sugar-Milk </li>
+                                <li><input type="radio" name="glaze" value="Vanilla-Milk"> Vanilla-Milk </li>
+                                <li><input type="radio" name="glaze" value="Double-Chocolate"> Double-Chocolate </li>
                             </ul>
                         </div>
                         <div class="numSelect">
                             <br> Quantity <br>
-                            <span style="font-style: italic;"> $1.09 Each</span> <br> <br>
+                            <span style="font-style: italic;" id="originalPrice" value=1.09> $1.09 Each</span> <br> <br>
                             <!-- Bun quantity input...eventually set limits to order size. -->
-                            <input type="number" min="0" max="12"> <br>
-                            <button class="add"> ADD </button>
+                            <!-- originalQuant links to JS to be reflected on the order summary panel -->
+                                <input type="number" min="0" max="12" id="originalQuant"> <br>
+                                <button class="add" type="submit" onclick="addBuns()"> ADD </button>
                         </div>
                     </div>
                     <div class="bun"> <br>
@@ -88,9 +89,12 @@
                 <div id="yourSum">
                     &emsp; &emsp;<span class="contentHeader"> ORDER SUMMARY </span>
                 </div>
-                <br><br><br><br><br><br><br><br><br><br>
-                <br><br><br><br><br><br><br><br><br><br>
-                <div id="totalPrice"> Total Price: &ensp; $ 0.00</div>
+                <br><br><br><br><br><br><br><br><br>
+                <br><br><br><br><br><br><br><br><br>
+                <!-- Attempting to dynamically count buns -->
+                <div class="bunCounter"> Total Buns Left: &ensp; 0 </div> <br>
+                <!-- Attempting to dynamically calculate price -->
+                <div class="totalPrice"> Total Price: &ensp; $ <span id="price"> </span> </div>
                 <button class="next" onclick="window.location.href='bunSelect.html';"> NEXT </button>
             </p>
         </div>
