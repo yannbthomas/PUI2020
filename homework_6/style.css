@@ -333,6 +333,10 @@ nav {
     z-index: 1;
 }
 
+#popup {
+    display : none;
+}
+
 .glazeSelect {
     font-family: 'Source Sans Pro', sans-serif;
     position: absolute;

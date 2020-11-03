@@ -1,11 +1,38 @@
-/* Running total of order price */
-var totalPrice = 0
+/* orderSize: storing number of buns selected */
 
-/* Storing glaze type, quantity & prize when "ADD" is selected */
+function oneBun() {
+    var orderSize = 1
+    console.log(orderSize)
+    localStorage.setItem('bunsLeft', orderSize.toString)
+}
 
+function threeBuns() {
+    var orderSize = 3
+    console.log(orderSize)
+    localStorage.setItem('bunsLeft', orderSize.toString)
+}
+
+function sixBuns() {
+    var orderSize = 6
+    console.log(orderSize)
+    localStorage.setItem('bunsLeft', orderSize.toString)
+}
+
+function dozenBuns() {
+    var orderSize = 12
+    console.log(orderSize)
+    localStorage.setItem('bunsLeft', orderSize.toString)
+}
+
+/* selectOriginal: Storing glaze type, quantity & price when "ADD" is selected */
 function addBuns() {
     var bunQuant = document.getElementById('originalQuant').value
+    var totalBuns = parseFloat(document.getElementById('buns').innerText)
+    
+
     var bunPrice = (bunQuant * 109) / 100
+    var totalPrice = parseFloat(document.getElementById('price').innerText)
+    
 
     var glazes = document.getElementsByName('glaze'); 
       
@@ -14,7 +41,27 @@ function addBuns() {
         var glazeType = glazes[i].value
     } 
 
+    var popup = document.getElementById("popup");
+    popup.style.display = "none";
+
+    /* Update price/quantity totals in storage */
+    var newBunsLeft = totalBuns - bunQuant
+    var newPrice = totalPrice + bunPrice
+
+    console.log(newBunsLeft)
+    console.log(newPrice)
+    
+
+    document.getElementById('buns').innerHTML = totalBuns - bunQuant;
     document.getElementById('price').innerHTML = totalPrice + bunPrice;
-    alert(bunQuant + ' buns, price is $' + bunPrice + '. Glaze is ' + glazeType);
-    location.replace("bunSelect.html")
+}
+
+/* selectOriginal: Toggle the view of the ADD popup */ 
+function toggle() {
+    var popup = document.getElementById("popup");
+    if (popup.style.display === "block") {
+      popup.style.display = "none";
+    } else {
+      popup.style.display = "block";
+    }
 }
