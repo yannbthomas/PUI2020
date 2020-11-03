@@ -2,31 +2,42 @@
 
 function oneBun() {
     var orderSize = 1
-    console.log(orderSize)
-    localStorage.setItem('bunsLeft', orderSize.toString)
+    var orderSizeString = orderSize.toString()
+    localStorage.setItem('bunsLeft', orderSizeString)
 }
 
 function threeBuns() {
     var orderSize = 3
-    console.log(orderSize)
-    localStorage.setItem('bunsLeft', orderSize.toString)
+    var orderSizeString = orderSize.toString()
+    console.log(orderSizeString)
+    localStorage.setItem('bunsLeft', orderSizeString)
 }
 
 function sixBuns() {
     var orderSize = 6
-    console.log(orderSize)
-    localStorage.setItem('bunsLeft', orderSize.toString)
+    var orderSizeString = orderSize.toString()
+    localStorage.setItem('bunsLeft', orderSizeString)
 }
 
 function dozenBuns() {
     var orderSize = 12
-    console.log(orderSize)
-    localStorage.setItem('bunsLeft', orderSize.toString)
+    var orderSizeString = orderSize.toString()
+    localStorage.setItem('bunsLeft', orderSizeString)
 }
+
+
+// selectOriginal: Dynamically loads the order size into selectOriginal "Buns left" area
+function bunLoad() {
+    var orderSize = Number(localStorage.getItem('bunsLeft'))
+    console.log(orderSize)
+    document.getElementById("buns").innerHTML = orderSize
+}
+
 
 /* selectOriginal: Storing glaze type, quantity & price when "ADD" is selected */
 function addBuns() {
     var bunQuant = document.getElementById('originalQuant').value
+    
     var totalBuns = parseFloat(document.getElementById('buns').innerText)
     
 
