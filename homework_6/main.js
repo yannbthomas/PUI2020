@@ -47,15 +47,16 @@ function bunLoad() {
 
 // Storing glaze type, quantity & price when "ADD" is selected 
 function addOrigBuns() {
+    // Number of original buns, selected in the popout's number input
+    var bunQuant = document.getElementById('originalQuant').value
+    // Size of order, based on selection made in bunSize
+    var totalBuns = parseFloat(document.getElementById('buns').innerText)
+
     // Check that customer isn't exceeding order size
     if (bunQuant > totalBuns) {
         alert("Oops! Looks like that's more buns that your current order size. Head back to the Order Size tab to add more!")
     
     } else { /* Core functionality */
-        // Number of original buns, selected in the popout's number input
-        var bunQuant = document.getElementById('originalQuant').value
-        // Size of order, based on selection made in bunSize
-        var totalBuns = parseFloat(document.getElementById('buns').innerText)
         var bunPrice = (bunQuant * 109) / 100
         // Collects $0.00 total price from selectOriginal
         var totalPrice = parseFloat(document.getElementById('price').innerText)
@@ -74,24 +75,34 @@ function addOrigBuns() {
         var newPrice = totalPrice + bunPrice;
 
         // Write in new values into selectOriginal
-        document.getElementById('buns').innerHTML = totalBuns - bunQuant ;
-        document.getElementById('price').innerHTML = (totalPrice + bunPrice) / 1;
+        document.getElementById('buns').innerHTML = newBunsLeft;
+
+        if (newPrice < 10) {
+            document.getElementById('price').innerHTML = newPrice.toPrecision(3);
+        } else {
+            document.getElementById('price').innerHTML = newPrice;
+        }
+        
 
         // Add new bun to fulllOrder array, and store
         var newBun = new Bun("Original", glazeType, bunQuant, bunPrice);
         fullOrder.push(newBun);
         localStorage.setItem("fullOrder", JSON.stringify(fullOrder));
+        
+        if (bunQuant == 1) {
+            var bunLab = "Bun"
+        } else if (bunQuant > 1) {
+            var bunLab = "Buns"
+        }
 
         var para = document.createElement("p");
-        var node = document.createTextNode("Jus a test");
+        var node = document.createTextNode(bunQuant + " " + newBun.type + " " + bunLab + " / " + glazeType + " Glaze");
         para.appendChild(node);
         var element = document.getElementById("summary");
         element.appendChild(para);
-        
+ 
         togAndClear();
     }
-    
-
 }
 
 // Clear and toggle popup
