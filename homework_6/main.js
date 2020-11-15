@@ -47,27 +47,25 @@ function bunLoad() {
 
 // Storing glaze type, quantity & price when "ADD" is selected 
 function addOrigBuns() {
-    
-    // Number of original buns, selected in the popout's number input
-    var bunQuant = document.getElementById('originalQuant').value
-    // Size of order, based on selection made in bunSize
-    var totalBuns = parseFloat(document.getElementById('buns').innerText)
-    var bunPrice = (bunQuant * 109) / 100
-    // Collects $0.00 total price from selectOriginal
-    var totalPrice = parseFloat(document.getElementById('price').innerText)
-    var glazes = document.getElementsByName('glaze'); 
-      
-    // Checks popup to assign bun glazing
-    for(i = 0; i < glazes.length; i++) { 
-        if(glazes[i].checked) 
-        var glazeType = glazes[i].value;
-    } 
-
     // Check that customer isn't exceeding order size
     if (bunQuant > totalBuns) {
         alert("Oops! Looks like that's more buns that your current order size. Head back to the Order Size tab to add more!")
     
     } else { /* Core functionality */
+        // Number of original buns, selected in the popout's number input
+        var bunQuant = document.getElementById('originalQuant').value
+        // Size of order, based on selection made in bunSize
+        var totalBuns = parseFloat(document.getElementById('buns').innerText)
+        var bunPrice = (bunQuant * 109) / 100
+        // Collects $0.00 total price from selectOriginal
+        var totalPrice = parseFloat(document.getElementById('price').innerText)
+        var glazes = document.getElementsByName('glaze'); 
+        
+        // Checks popup to assign bun glazing
+        for(i = 0; i < glazes.length; i++) { 
+            if(glazes[i].checked) 
+            var glazeType = glazes[i].value;
+        } 
 
         // Remaining buns
         var newBunsLeft = totalBuns - bunQuant;
@@ -76,17 +74,24 @@ function addOrigBuns() {
         var newPrice = totalPrice + bunPrice;
 
         // Write in new values into selectOriginal
-        document.getElementById('buns').innerHTML = totalBuns - bunQuant;
-        document.getElementById('price').innerHTML = totalPrice + bunPrice;
+        document.getElementById('buns').innerHTML = totalBuns - bunQuant ;
+        document.getElementById('price').innerHTML = (totalPrice + bunPrice) / 1;
 
         // Add new bun to fulllOrder array, and store
         var newBun = new Bun("Original", glazeType, bunQuant, bunPrice);
         fullOrder.push(newBun);
         localStorage.setItem("fullOrder", JSON.stringify(fullOrder));
 
+        var para = document.createElement("p");
+        var node = document.createTextNode("Jus a test");
+        para.appendChild(node);
+        var element = document.getElementById("summary");
+        element.appendChild(para);
+        
         togAndClear();
-
     }
+    
+
 }
 
 // Clear and toggle popup
