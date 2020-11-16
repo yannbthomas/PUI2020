@@ -175,10 +175,12 @@ function loadCart() {
         // Create Remove button
         var btn = document.createElement("button");
         btn.innerHTML = "Delete";
-        div.appendChild(btn); 
+        
         btn.onclick = function() {
-            console.log(btn.parentElement)
-            console.log(btn.parentNode)
+            console.log("hiii");
+            console.log(this.parentElement);
+            // console.log(this.parentNode)
+            this.parentElement.remove()
         }
         
 
@@ -187,6 +189,7 @@ function loadCart() {
 
         var element = document.getElementById("fullSum");
         element.appendChild(div);
+        div.appendChild(btn); 
         element.appendChild(br);
         element.appendChild(br2);
     }
