@@ -62,7 +62,7 @@
                             <!-- Bun quantity input...eventually set limits to order size. -->
                             <!-- originalQuant links to JS to be reflected on the order summary panel -->
                                 <input type="number" min="0" max="12" id="originalQuant"> <br>
-                                <button class="add" type="submit" onclick="addBuns()"> ADD </button>
+                                <button class="add" type="submit" onclick="addOrigBuns()"> ADD </button>
                         </div>
                     </div>
                     <div class="bun"> <br>
@@ -90,6 +90,9 @@
                 </div>
                 <div id="yourSum">
                     &emsp; &emsp;<span class="contentHeader"> ORDER SUMMARY </span>
+                    <!-- Where order summary dynamically appears after being added -->
+                    <div id="summary">
+                    </div>
                 </div>
                 <br><br><br><br><br><br><br><br><br>
                 <br><br><br><br><br><br><br><br><br>
@@ -97,11 +100,8 @@
                 <div class="bunCounter"> Total Buns Left: &ensp; <span id="buns"> </span> </div> <br>
                 <!-- Attempting to dynamically calculate price -->
                 <div class="totalPrice"> Total Price: &ensp; $ <span id="price"> 0.00 </span> </div>
-                <button class="next"> NEXT </button>
+                <button class="next" onclick="addToCart()"> ADD TO CART </button>
             </p>
-        </div>
-        <div class="orderStep">
-            <a class="stepLabel">4 &emsp; REVIEW & ADD TO CART</a>
         </div>
 
 

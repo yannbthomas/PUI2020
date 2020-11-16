@@ -390,6 +390,11 @@ nav {
     margin-top: 30px;
 }
 
+#summary {
+    margin: 10px 0 0 40px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
 .totalPrice {
     font-family: 'Source Sans Pro', sans-serif;
     text-align: right;
