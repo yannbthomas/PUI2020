@@ -167,29 +167,28 @@ function loadCart() {
         }
 
         // Writes order information into the cart summary section
-        var span = document.createElement("span");
+        var div = document.createElement("div");
         var node = document.createTextNode("$" + price + " / " + num + " " + type + " " + 
                     bunLab + " / " + glaze + " Glaze  / ")
-        span.appendChild(node);
+        div.appendChild(node);
 
         // Create Remove button
         var btn = document.createElement("button");
-        btn.innerHTML = "Delete"
-        btn.onclick = function Remove() {
-            console.log("This worked")
-            orderSum.splice(i, i+1)
-            console.log(orderSum)
+        btn.innerHTML = "Delete";
+        div.appendChild(btn); 
+        btn.onclick = function() {
+            console.log(btn.parentElement)
+            console.log(btn.parentNode)
         }
+        
 
         var br = document.createElement("br");
         var br2 = document.createElement("br");
 
         var element = document.getElementById("fullSum");
-        element.appendChild(span);
-        element.appendChild(btn);
+        element.appendChild(div);
         element.appendChild(br);
         element.appendChild(br2);
-
     }
     
 
