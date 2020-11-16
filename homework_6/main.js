@@ -41,7 +41,6 @@ function Bun(type, glaze, num, price) {
 // Dynamically loads the order size into selectOriginal "Buns left" area
 function bunLoad() {
     var orderSize = Number(localStorage.getItem('bunsLeft'))
-    console.log(orderSize)
     document.getElementById("buns").innerHTML = orderSize
 }
 
@@ -105,6 +104,16 @@ function addOrigBuns() {
     }
 }
 
+// Link to cart page, store final price
+function addToCart () {
+    // Optional: Check that customer has ordered all buns, based on order size
+
+    var finalPrice = document.getElementById('price').innerHTML
+    var priceAsString = finalPrice.toString()
+    localStorage.setItem('finalPrice', priceAsString)
+    window.location.href='cart.html';
+}
+
 // Clear and toggle popup
 function togAndClear() {
     var glazes = document.getElementsByName('glaze'); 
@@ -132,10 +141,64 @@ function toggle() {
 
 /*********** cart ************/
 
-function test() {
-    var order = JSON.parse(localStorage.getItem("fullOrder"))
-    console.log(order);
+function loadCart() {
+    console.log(JSON.parse(localStorage.getItem("fullOrder")));
+    var orderSum = JSON.parse(localStorage.getItem("fullOrder"));
+
+    // Dynamically load total order size, optional if extra time
+    // var orderSize = Number(localStorage.getItem('bunsLeft'))
+    // document.getElementById("totBuns").innerHTML = orderSize
+
+    // Dynamically load total order price
+    var orderPrice = Number(localStorage.getItem('finalPrice'))
+    document.getElementById("totPrice").innerHTML = orderPrice
+
+    
+    for (i=0; i < orderSum.length; i++) {
+        var type = orderSum[i].type
+        var num = orderSum[i].num
+        var glaze = orderSum[i].glaze
+        var price = orderSum[i].price
+
+        if (num == 1) {
+            var bunLab = "Bun"
+        } else if (num > 1) {
+            var bunLab = "Buns"
+        }
+
+        // Writes order information into the cart summary section
+        var span = document.createElement("span");
+        var node = document.createTextNode("$" + price + " / " + num + " " + type + " " + 
+                    bunLab + " / " + glaze + " Glaze  / ")
+        span.appendChild(node);
+
+        // Create Remove button
+        var btn = document.createElement("button");
+        btn.innerHTML = "Delete"
+        btn.onclick = function Remove() {
+            console.log("This worked")
+            orderSum.splice(i, i+1)
+            console.log(orderSum)
+        }
+
+        var br = document.createElement("br");
+        var br2 = document.createElement("br");
+
+        var element = document.getElementById("fullSum");
+        element.appendChild(span);
+        element.appendChild(btn);
+        element.appendChild(br);
+        element.appendChild(br2);
+
+    }
+    
+
 }
+
+// Ight so my sense is, we repeat the code from the order summary section
+// Just make it an onload function the loads the info in
+
+// But the delete buttons! Here's a guess: add a command that also generates a delete button beside each order item
 
 
 
